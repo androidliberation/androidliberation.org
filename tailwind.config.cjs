@@ -1,6 +1,6 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  plugins: [require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
   theme: {
     extend: {
       colors: {
@@ -12,6 +12,10 @@ module.exports = {
       fontFamily: {
         alf: ['"Roboto Mono"', "monospace"],
       },
+    },
+    fontFamily: {
+      sans: ["Roboto", "sans-serif"],
+      mono: ['"Roboto Mono"', "monospace"],
     },
   },
   daisyui: {
