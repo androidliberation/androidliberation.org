@@ -6,7 +6,6 @@ module.exports = {
       colors: {
         "alf-dark": "#0a0a0a",
         "alf-light": "#1f1f1f",
-        "alf-green": "#00ff66",
         "alf-accent": "#4d4d4d",
       },
       fontFamily: {
@@ -21,17 +20,19 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        alf: {
-          primary: "#00ff66",
-          secondary: "#1f1f1f",
-          accent: "#4d4d4d",
-          neutral: "#331800",
-          "base-100": "#0a0a0a",
-          info: "#2b6cb0",
-          success: "#48bb78",
-          warning: "#ed8936",
-          error: "#e53e3e",
-        },
+        'alf': {
+        '50': '#fef2f3',
+        '100': '#fde6e7',
+        '200': '#fbd0d5',
+        '300': '#f7aab2',
+        '400': '#f27a8a',
+        '500': '#ea546c',
+        '600': '#d5294d',
+        '700': '#b31d3f',
+        '800': '#961b3c',
+        '900': '#811a39',
+        '950': '#48091a',
+    },
       },
     ],
   },
