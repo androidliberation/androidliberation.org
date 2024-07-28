@@ -1,69 +1,140 @@
-<div class="navbar bg-base-100">
-  <div class="navbar-start">
-    <div class="dropdown">
-      <label tabindex="0" class="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"></path></svg
-        >
-      </label>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-      >
-        <li>
-          <a class="btn btn-ghost normal-case text-xl" href="/projects">projects</a>
-        </li>
-        <li>
-          <a class="btn btn-ghost normal-case text-xl" href="/manifesto"
-            >manifesto</a
-          >
-        </li>
-        <li>
-          <a class="btn btn-ghost normal-case text-xl" href="/future">future</a>
-        </li>
-        <li>
-          <a class="btn btn-ghost normal-case text-xl" href="/history"
-            >history</a
-          >
-        </li>
-        <li>
-          <a class="btn btn-ghost normal-case text-xl" href="/team">team</a>
-        </li>
-      </ul>
-    </div>
-    <a class="btn btn-ghost normal-case text-xl font-mono" href="/"
-      >Android Liberation Front</a
+<div class="bg-gray-900">
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav
+      class="flex items-center justify-between p-6 lg:px-8"
+      aria-label="Global"
     >
-  </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li>
-        <a class="btn btn-ghost normal-case text-xl" href="/projects">projects</a>
-      </li>
-      <li>
-        <a class="btn btn-ghost normal-case text-xl" href="/manifesto"
-          >manifesto</a
+      <div class="flex lg:flex-1">
+        <a href="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">Android Liberation Front</span>
+          <img alt="" src="/alf-logo.png" class="h-8 w-auto" />
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button
+          type="button"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+          id="open-mobile-menu"
         >
-      </li>
-      <li>
-        <a class="btn btn-ghost normal-case text-xl" href="/future">future</a>
-      </li>
-      <li>
-        <a class="btn btn-ghost normal-case text-xl" href="/history">history</a>
-      </li>
-      <li>
-        <a class="btn btn-ghost normal-case text-xl" href="/team">team</a>
-      </li>
-    </ul>
-  </div>
-  <div class="navbar-end"></div>
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="/projects" class="text-sm font-semibold leading-6 text-white"
+          >Projects</a
+        >
+        <a href="/manifesto" class="text-sm font-semibold leading-6 text-white"
+          >Manifesto</a
+        >
+        <a href="/history" class="text-sm font-semibold leading-6 text-white"
+          >History</a
+        >
+        <a href="/team" class="text-sm font-semibold leading-6 text-white"
+          >Team</a
+        >
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end"></div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div
+      class="lg:hidden hidden"
+      role="dialog"
+      aria-modal="true"
+      id="opened-mobile-menu-content"
+    >
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="fixed inset-0 z-50"></div>
+      <div
+        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10"
+      >
+        <div class="flex items-center justify-between">
+          <a href="/" class="-m-1.5 p-1.5">
+            <span class="sr-only">Android Liberation Front</span>
+            <img alt="" src="/alf-logo.png" class="h-8 w-auto" />
+          </a>
+          <button
+            type="button"
+            class="-m-2.5 rounded-md p-2.5 text-gray-400 hidden"
+            id="close-mobile-menu"
+          >
+            <span class="sr-only">Close menu</span>
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/25">
+            <div class="space-y-2 py-6">
+              <a
+                href="/projects"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                >Projects</a
+              >
+              <a
+                href="/manifesto"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                >Manifesto</a
+              >
+              <a
+                href="/history"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                >History</a
+              >
+              <a
+                href="/team"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                >Team</a
+              >
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <slot />
 </div>
+<script>
+  const closeMobileMenu = document.getElementById("close-mobile-menu");
+  const openMobileMenu = document.getElementById("open-mobile-menu");
+
+  // Handle clicks on each button.
+  closeMobileMenu.addEventListener("click", () => {
+    document
+      .getElementById("opened-mobile-menu-content")
+      .classList.add("hidden");
+    document.getElementById("open-mobile-menu").classList.remove("hidden");
+    document.getElementById("close-mobile-menu").classList.add("hidden");
+  });
+  openMobileMenu.addEventListener("click", () => {
+    document
+      .getElementById("opened-mobile-menu-content")
+      .classList.remove("hidden");
+    document.getElementById("open-mobile-menu").classList.add("hidden");
+    document.getElementById("close-mobile-menu").classList.remove("hidden");
+  });
+</script>
